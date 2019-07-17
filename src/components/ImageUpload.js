@@ -12,12 +12,11 @@ class ImageUpload extends React.Component {
     render () {
         return (
             <div>
-                <label className="file-label">
-                    <p>Click here to upload a file</p>
-                    <input type="file" name="image" className="file-actual" onChange={(evt) => { this.fileUploaded(evt.target.files) }} />
-                    {this.props.fileURL && 
-                        <input type="hidden" name="file_url" value={this.props.fileURL} />                    
+                <label className="file-label" style={this.props.fileURL ? { backgroundImage: `url(${this.props.fileURL})` } : null}>
+                    {!this.props.fileURL && 
+                        <p>Click here to upload a file</p>                    
                     }
+                    <input type="file" name="image" className="file-actual" onChange={(evt) => { this.fileUploaded(evt.target.files) }} />
                 </label>
             </div>
         )

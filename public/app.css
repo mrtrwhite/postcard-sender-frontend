@@ -88,6 +88,9 @@ body * {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .file-label::after {

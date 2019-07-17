@@ -1,5 +1,5 @@
-import fetch from 'cross-fetch'
 import { baseURL } from '../api';
+import axios from 'axios';
 
 export const UPLOAD_REQUEST = 'UPLOAD_REQUEST'
 
@@ -35,18 +35,19 @@ export function makeFileRequest(fileObject) {
     return function(dispatch) {
         dispatch(fileUploaded(fileObject));
 
-        // fetch.post(baseURL, formData)
-        //     .then(
-        //         response => response.json(),
-        //         error => dispatch(fileUploadFailed(error.response || null))
-        //     )
-        //     .then(json => {
-        //         dispatch(fileUploadSucceeded(json.url))
+        // axios.post(baseURL, formData)
+        //     .catch((error) => {
+        //         if(error.response) {
+        //             dispatch(fileUploadFailed(error.response.data))
+        //         }
+        //     })
+        //     .then((response) => { 
+        //         dispatch(fileUploadSucceeded(response.data.url)) 
         //     })
 
         setTimeout(() => {
             dispatch(fileUploadSucceeded({
-                url: 'https://picsum.photos/200/300'
+                url: 'https://placekitten.com/600/400'
             }))
         }, 1000)
     }
