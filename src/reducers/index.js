@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import page from './page'
+import { file } from './upload'
 
 const rootReducer = combineReducers({
-    page
+    file
 })
 
 export default rootReducer

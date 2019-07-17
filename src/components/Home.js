@@ -1,15 +1,12 @@
 import React from 'react'
-import store from '../store'
-import { nextPage } from '../actions/paginate';
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props)
-        store.subscribe(() => { console.log(store.getState()) })
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     getStarted () {
-        store.dispatch(nextPage())
+        this.props.begin();
     }
 
     render () {
