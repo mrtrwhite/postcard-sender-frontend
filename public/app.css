@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
 
 body * {
@@ -51,11 +52,15 @@ body * {
     cursor: pointer;
 }
 
+.button.disabled {
+    opacity: 0.3;
+}
+
 .card {
     opacity: 0;
     width: calc(100% - 40px);
-    max-width: 680px;
-    padding: 40px 70px;
+    max-width: 1280px;
+    padding: 50px 40px;
     position: absolute;
     bottom: -100%;
     left: 50%;
@@ -63,6 +68,19 @@ body * {
     background: #FFFFFF;
     border-radius: 4px;
     transition: bottom 0.35s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.half {
+    width: 50%;
+    flex-basis: 50%;
+    padding: 0 10px;
 }
 
 .card.active {
@@ -76,6 +94,12 @@ body * {
     line-height: 35px;
     margin: 0 0 30px 0;
     text-align: center;
+    width: 100%;
+}
+
+.card-button {
+    align-self: center;
+    margin-top: 30px;
 }
 
 .file-label {
@@ -105,4 +129,62 @@ body * {
     width: 1px;
     height: 1px;
     overflow: hidden;
+}
+
+.back-preview {
+    width: 100%;
+    display: block;
+    background-color: #f5f5f5;
+    border: 1px solid #DFDFDF;
+    border-radius: 3px;
+    position: relative;
+}
+
+.back-preview::after {
+    content: " ";
+    padding-bottom: 66%;
+    display: block;
+}
+
+.message-textarea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    background: rgba(0,0,0,0);
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+}
+
+.address-preview {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.address-preview > div {
+    border-left: 1px solid #DFDFDF;
+    padding: 0 20px;
+}
+
+/* .back-preview,
+.file-label {
+    min-width: 580px;
+    min-height: 383.47px;
+} */
+
+@media screen and (max-width: 768px) {
+    .half {
+        width: 100%;
+        flex-basis: 100%;
+    }
 }
