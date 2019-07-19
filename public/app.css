@@ -56,20 +56,30 @@ body * {
     opacity: 0.3;
 }
 
+.button-wrap {
+    text-align: center;
+}
+
 .card {
     opacity: 0;
+    visibility: hidden;
     width: calc(100% - 40px);
     max-width: 1280px;
     padding: 50px 40px;
     position: absolute;
-    bottom: -100%;
-    left: 50%;
-    transform: translate(-50%, 50%);
     background: #FFFFFF;
-    border-radius: 4px;
-    transition: bottom 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
     display: flex;
     flex-direction: column;
+    border-radius: 3px;
+}
+
+.upload-half {
+    padding-right: 10px;
+}
+
+.back-half {
+    padding-left: 10px;
 }
 
 .card-inner {
@@ -80,13 +90,25 @@ body * {
 .half {
     width: 50%;
     flex-basis: 50%;
-    padding: 0 10px;
 }
 
 .card.active {
     opacity: 1;
-    bottom: 50%;
+    visibility: visible;
 }
+
+.card-panel {
+    display: none;
+    border-radius: 3px;
+}
+
+.card-panel.active {
+    display: block;
+}
+
+.card-step-1 {}
+
+.card-step-2 {}
 
 .card-title {
     font-family: 'Raleway', sans-serif;
@@ -138,6 +160,7 @@ body * {
     border: 1px solid #DFDFDF;
     border-radius: 3px;
     position: relative;
+    font-size: 14px;
 }
 
 .back-preview::after {
@@ -157,8 +180,8 @@ body * {
     border: none;
     resize: none;
     outline: none;
-    font-size: 1rem;
     text-overflow: ellipsis;
+    font-size: 14px;
 }
 
 .address-preview {
@@ -176,11 +199,28 @@ body * {
     padding: 0 20px;
 }
 
-/* .back-preview,
-.file-label {
-    min-width: 580px;
-    min-height: 383.47px;
-} */
+.input-row {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.input-row > div:first-child {
+    padding-right: 10px;
+}
+
+.input-row > div:nth-child(2) {
+    padding-left: 10px;
+}
+
+.text-input {
+    border: 1px solid #DFDFDF;
+    background: #FFFFFF;
+    border-radius: 2px;
+    padding: 7px;
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+}
 
 @media screen and (max-width: 768px) {
     .half {
